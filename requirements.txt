@@ -1,0 +1,6 @@
+scrapy~=2.8.0
+mysql~=0.0.3
+mysql-connector-python~=8.0.32
+protego~=0.2.1
+setuptools~=65.6.3
+requests~=2.28.2
