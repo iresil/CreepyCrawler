@@ -1,6 +1,6 @@
 import json
 import definitions
-from database import storyReader
+from database.storyReader import StoryReader
 
 
 class LinkParser:
@@ -16,7 +16,7 @@ class LinkParser:
         for json_str in json_list:
             result = json.loads(json_str)
             if result['link'] is not None:
-                if storyReader.get_object(result['link']) is not None:
+                if StoryReader.get_object(result['link']) is not None:
                     print("Story %s already in database. Skipping...", result['link'], "\n")
                 elif urls is None:
                     urls = [{"link": result['link'], "rating": result['rating']}]
