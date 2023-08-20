@@ -30,16 +30,18 @@ class StoryReader:
             for row in records:
                 story_item = StoryItem()
                 print("Id = ", row[0])
-                story_item["title"] = row[1]
-                print("Title = ", row[1])
-                story_item["rating"] = row[2]
-                print("Rating = ", row[2])
-                story_item["reading_time"] = row[3]
-                print("Reading Time = ", row[3])
-                story_item["categories"] = row[4]
-                print("Categories = ", row[4])
-                story_item["text"] = row[5]
-                print("Content = ", row[5], "\n")
+                story_item["link"] = row[1]
+                print("Link = ", row[1])
+                story_item["title"] = row[2]
+                print("Title = ", row[2])
+                story_item["rating"] = row[3]
+                print("Rating = ", row[3])
+                story_item["reading_time"] = row[4]
+                print("Reading Time = ", row[4])
+                story_item["categories"] = row[5]
+                print("Categories = ", row[5])
+                story_item["text"] = row[6]
+                print("Content = ", row[6], "\n")
         except mysql.connector.Error as e:
             print("Error reading data from MySQL table", e)
         finally:
