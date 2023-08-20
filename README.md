@@ -10,12 +10,12 @@ Simple crawler created in **Python 3.10**. Visits the [CreepyPasta](https://www.
 - Reads the contents of `resources/links.jsonl`, follows each link and stores its contents in a MySQL DB entry, alongside its rating, reading time and categories.
 
 ## Plugin dependencies
-- **scrapy 2.8.0**
-- **mysql 0.0.3**
-- **mysql-connector-python 8.0.32**
-- **protego 0.2.1**
-- **requests 2.28.2**
-- a locally installed **MySQL** server instance, with a database called `creepystore`
+- [**scrapy 2.8.0**](https://pypi.org/project/Scrapy/)
+- [**mysql 0.0.3**](https://pypi.org/project/mysql/)
+- [**mysql-connector-python 8.0.32**](https://pypi.org/project/mysql-connector-python/)
+- [**protego 0.2.1**](https://pypi.org/project/Protego/)
+- [**requests 2.28.2**](https://pypi.org/project/requests/)
+- a locally installed [**MySQL**](https://dev.mysql.com/downloads/installer/) server instance, with a database called `creepystore`
 
 ## Finding story links to download
 The main entry point for this part of the process is `crawler/creepyCrawlerLinks.py`, which contains the `LinkSpider` class. It uses **scrapy** to retrieve all story links.
