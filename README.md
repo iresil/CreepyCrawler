@@ -20,24 +20,24 @@ Simple crawler created in **Python 3.10**. Visits the [CreepyPasta](https://www.
 ## Finding story links to download
 The main entry point for this part of the process is `crawler/creepyCrawlerLinks.py`, which contains the `LinkSpider` class. It uses **scrapy** to retrieve all story links.
 
-It is called in `main.py`, using:
+It is called from `main.py`, using:
 ```
 cmdline.execute("scrapy runspider crawler/creepyCrawlerLinks.py -o resources/links.jsonl".split())
 ```
 
-After executing this code for the first time, you can comment out the calling line in `main.py`, so that you can work with offline data only.
+After executing this code for the first time, you can set `DOWNLOAD_LINKS = False` in `definitions.py`, so that you can work with offline data only.
 
 If you want to download the links multiple times, you will need to delete the `resources/links.jsonl` file before each new execution.
 
 ## Downloading the stories
 The main entry point for this part of the process is `crawler/creepyCrawlerStories.py`, which contains the `StoriesSpider` class. This also uses **scrapy**, this time to download the actual stories. For storing them to the DB, it uses **MySQL Connector (Python)**.
 
-It is called in `main.py`, using:
+It is called from `main.py`, using:
 ```
 cmdline.execute("scrapy runspider crawler/creepyCrawlerStories.py".split())
 ```
 
-You can comment out this line if you only want to download the story links with their ratings.
+You can set `DOWNLOAD_STORIES = False` in `definitions.py`, if you only want to download the story links with their ratings.
 
 ## Storing data
 After the code runs, the stories will be stored in your local MySQL server instance.

@@ -12,3 +12,6 @@ MYSQL_HOST = 'localhost'
 MYSQL_USER = 'python'
 MYSQL_PASSWORD = 'python'
 MYSQL_DB = 'creepystore'
+
+DOWNLOAD_LINKS = False
+DOWNLOAD_STORIES = True

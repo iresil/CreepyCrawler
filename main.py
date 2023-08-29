@@ -1,5 +1,7 @@
 import logging
 from scrapy import cmdline
+import definitions
+
 
 logging.basicConfig(filename='log.txt',
                     filemode='a',
@@ -7,5 +9,7 @@ logging.basicConfig(filename='log.txt',
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
 
-# cmdline.execute("scrapy runspider crawler/creepyCrawlerLinks.py -o resources/links.jsonl".split())
-cmdline.execute("scrapy runspider crawler/creepyCrawlerStories.py".split())
+if definitions.DOWNLOAD_LINKS:
+    cmdline.execute("scrapy runspider crawler/creepyCrawlerLinks.py -o resources/links.jsonl".split())
+if definitions.DOWNLOAD_STORIES:
+    cmdline.execute("scrapy runspider crawler/creepyCrawlerStories.py".split())

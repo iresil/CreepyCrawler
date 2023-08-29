@@ -31,7 +31,7 @@ class MysqlPipeline:
         """)
 
     def process_item(self, item, spider):
-        """ Upserts the story in the DB. """
+        """ Inserts the story if necessary. """
 
         # Check to see if story is already in database
         self.cur.execute("SELECT * FROM stories WHERE title = %s AND reading_time = %s AND rating = %s",
